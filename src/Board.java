@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.Color;
 
@@ -7,6 +8,7 @@ public class Board extends JPanel {
     Color empty = Color.white, green = Color.GREEN, red = Color.RED;
 
     Board() {
+        setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
         arrbtton = new JButton[7][7];
         setPreferredSize(new Dimension(750, 750));
         for (int i = 0; i < arrbtton.length; i++) {
