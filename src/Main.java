@@ -26,14 +26,14 @@ public class Main {
         boolean flag;
         int row;
         do {
-            row = chackinput();
+            row = chackinput(player);
             flag = pan.ChackWhereEmpty(row - 1, player);
         } while (!flag);
     }
 
-    private static int chackinput() {
+    private static int chackinput(int player) {
         int row;
-        System.out.println("where do you want to put your disc?");
+        System.out.println("player " + player+", where do you want to put your disc?");
         row = in.nextInt();
         while (1 > row || row > 7) {
         System.out.println("choose a valid row!!");
