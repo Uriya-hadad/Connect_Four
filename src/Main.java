@@ -7,20 +7,20 @@ public class Main {
 
     public static void main(String[] args) {
         boolean win = false;
-        int player = 1;
+        int player = 2;
         JFrame frame = new JFrame("4 in a row");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.add(pan);
         frame.pack();
         frame.setVisible(true);
         while (!win) {
+            player = (player == 2) ? 1 : 2;
             takeTurn(player);
             win = pan.colorExists(player);
-            player = (player == 1) ? 2 : 1;
         }
         JOptionPane.showMessageDialog(pan, "player " + player + " is the winner");
+        frame.dispose();
     }
-
 
     public static void takeTurn(int player) {
         boolean flag;

@@ -1,10 +1,11 @@
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.Color;
 
 public class Board extends JPanel {
     JButton[][] arrbtton;
+    JLabel turnLabel = new JLabel("this is the turn of the:   ");
+    JButton turnButton = new JButton();
     Color empty = Color.white, green = Color.GREEN, red = Color.RED;
 
     Board() {
@@ -22,6 +23,10 @@ public class Board extends JPanel {
                 }
                 arrbtton[i][j].setPreferredSize(new Dimension(100, 100));
                 add(arrbtton[i][j]);
+                add(turnLabel);
+                turnButton.setPreferredSize(new Dimension(30,30));
+                turnButton.setBackground(green);
+                add(turnButton);
             }
         }
     }
@@ -30,6 +35,7 @@ public class Board extends JPanel {
         for (int i = 6; i > 0; i--) {
             if (arrbtton[i][row].getBackground() == empty) {
                 arrbtton[i][row].setBackground((player == 1) ? green : red);
+                turnButton.setBackground((player == 2) ? green : red);
                 return true;
             }
         }
